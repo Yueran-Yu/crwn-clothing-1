@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import {HomePage} from "./homepage.component";
+import {HomePage} from "./pages/homepages/homepage.component";
 
-function App() {
+const App = () => {
   return (
     <div>
       <HomePage/>
