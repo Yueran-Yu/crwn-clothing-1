@@ -1,9 +1,9 @@
 import React from 'react';
-import {ButtonWrapper} from  './custom-button.style';
+import {ButtonWrapper} from './custom-button.style';
 
-const CustomButton = ({children, ...otherProps}) => (
+const CustomButton = ({children, isGoogleSignIn, ...otherProps}) => (
 
-  <ButtonWrapper className='custom-button' {...otherProps}>
+  <ButtonWrapper className={`${isGoogleSignIn ? 'google-sign-in' : ''}   custom-button`} {...otherProps}>
     {children}
   </ButtonWrapper>
 )

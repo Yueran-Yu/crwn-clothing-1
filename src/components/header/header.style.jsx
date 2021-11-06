@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
 
     .option {
       padding: 10px 15px;
+      cursor: pointer;
     }
   }
 `
