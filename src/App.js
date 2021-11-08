@@ -30,6 +30,8 @@ const App = () => {
     unsubscribeFromAuth()
     return () => unsubscribeFromAuth()
   }, [])
+
+  console.log(currentUser)
   return (
     <div>
       <Header currentUser={currentUser}/>
