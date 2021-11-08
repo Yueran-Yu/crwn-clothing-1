@@ -6,7 +6,6 @@ import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
-
 // remember: in the previous video, we stored the user data in our database, but now we have to store that data in the 'state' of our application so we can use it in our app~
 
 const App = () => {
@@ -17,23 +16,20 @@ const App = () => {
           if (userAuth) {
             const useRef = await createUserProfileDocument(userAuth)
             useRef.onSnapshot(snapshot => {
-              console.log(snapshot.data())
-
               setCurrentUser({
                 id: snapshot.id,
                 ...snapshot.data()
               })
             })
+          } else {
+            setCurrentUser(userAuth)
           }
         }
       )
     }
     unsubscribeFromAuth()
-
     return () => unsubscribeFromAuth()
   }, [])
-  console.log('***********')
-  console.log(currentUser)
   return (
     <div>
       <Header currentUser={currentUser}/>

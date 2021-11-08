@@ -16,13 +16,13 @@ const config = {
   measurementId: "G-VT84EGRRYF"
 }
 
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) {
     return
   }
   const useRef = firestore.doc(`users/${userAuth.uid}`)
   const snapShot = await useRef.get()
-  console.log(snapShot)
 
   if (!snapShot.exists) {
     const {displayName, email} = userAuth

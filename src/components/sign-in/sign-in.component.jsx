@@ -16,12 +16,10 @@ class SignIn extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log(event)
     this.setState({email: '', password: ''})
   }
 
   handleChange = (event) => {
-    console.log(event)
     const {value, name} = event.target;
     this.setState({[name]: value})
   }
