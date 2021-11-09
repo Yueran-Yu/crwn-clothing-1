@@ -28,6 +28,7 @@ class SignIn extends Component {
     const {value, name} = event.target;
     this.setState({[name]: value})
   }
+
   render() {
     return (
       <Wrapper>
@@ -40,7 +41,8 @@ class SignIn extends Component {
                      value={this.state.password} required/>
           <div className='buttons'>
             <CustomButton type='submit'>Sign In</CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>{''}Sign In With GOOGLE{''}</CustomButton>
+            <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>{''}Sign In With
+              GOOGLE{''}</CustomButton>
           </div>
         </form>
       </Wrapper>
