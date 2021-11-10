@@ -18,10 +18,19 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     overflow: auto;
+    margin-bottom:10px;
 
     ::-webkit-scrollbar {
       display: none;
     }
+    
+    .empty-message{
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+      margin: 50px auto;
+    }
   }
+  
 `
 

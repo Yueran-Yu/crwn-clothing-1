@@ -4,6 +4,7 @@ import {Wrapper} from "./cart-icon.styles";
 import {connect} from 'react-redux';
 import {toggleCart} from "../../redux/cart/cart.actions";
 import {selectCartItemsCount} from "../../redux/cart/cart.selectors";
+import {createStructuredSelector} from "reselect";
 
 const CartIcon = ({itemCount, toggleCart}) => (
   <Wrapper>
@@ -12,8 +13,12 @@ const CartIcon = ({itemCount, toggleCart}) => (
   </Wrapper>
 )
 
-const mapStateToProps = state => ({
-  itemCount: selectCartItemsCount(state)
+// const mapStateToProps = state => ({
+//   itemCount: selectCartItemsCount(state)
+// })
+
+const mapStateToProps = createStructuredSelector({
+  itemCount: selectCartItemsCount
 })
 
 const mapDispatchToProps = dispatch => ({
