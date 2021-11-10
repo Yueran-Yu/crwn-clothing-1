@@ -1,14 +1,28 @@
 import React from 'react';
 import {Wrapper} from './collection-item.style';
+import CustomButton from "../custom-button/custom-button.compnent";
+import {connect} from 'react-redux';
+import {addItem} from "../../redux/cart/cart.actions";
 
-const CollectionItem = ({name, price, imageUrl}) => (
-  <Wrapper imageUrl={imageUrl}>
-    <div className='image'/>
-    <div className='collection-footer'>
-      <span className='name'>{name}</span>
-      <span className='price'>{price}</span>
-    </div>
-  </Wrapper>
-)
+const CollectionItem = ({item, addItem}) => {
+  const {name, price, imageUrl} = item;
+  const AddItem = () => {
+    addItem(item)
+  }
 
-export default CollectionItem;
+  return (
+    <Wrapper imageUrl={imageUrl}>
+      <div className='image'/>
+      <div className='collection-footer'>
+        <span className='name'>{name}</span>
+        <span className='price'>{price}</span>
+      </div>
+      <CustomButton onClick={AddItem} inverted>Add to cart</CustomButton>
+    </Wrapper>
+  )
+}
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(CollectionItem);
