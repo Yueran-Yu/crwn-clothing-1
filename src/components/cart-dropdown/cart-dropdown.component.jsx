@@ -4,6 +4,7 @@ import './cart-dropdown.styles'
 import {Wrapper} from "./cart-dropdown.styles";
 import CartItem from "../cart-item/cart-item.component";
 import {connect} from 'react-redux';
+import {selectCartItems} from '../../redux/cart/cart.selectors'
 
 const CartDropdown = ({cartItems}) => (
   <Wrapper>
@@ -16,9 +17,9 @@ const CartDropdown = ({cartItems}) => (
   </Wrapper>
 )
 
-const mapStateToProps = ({cart: {cartItems}}) => {
+const mapStateToProps = (state) => {
   return {
-    cartItems
+    cartItems: selectCartItems(state)
   }
 }
 
