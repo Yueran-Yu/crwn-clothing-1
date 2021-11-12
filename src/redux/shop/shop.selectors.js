@@ -1,4 +1,5 @@
 import {createSelector} from "reselect";
+import memoize from 'lodash.memoize';
 
 const COLLECTION_ID_MAP = {
   hats: 1,
@@ -13,6 +14,6 @@ export const selectShopCollections = createSelector([selectShop],
   shop => shop.collections
 )
 
-export const selectCollection = collectionUrlParam => createSelector([selectShopCollections],
+export const selectCollection = memoize(collectionUrlParam => createSelector([selectShopCollections],
   collections => collections.find(c => c.id === COLLECTION_ID_MAP[collectionUrlParam])
-)
+))
