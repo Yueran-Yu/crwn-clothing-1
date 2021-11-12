@@ -2,8 +2,8 @@ import React from 'react';
 import {Wrapper} from "./menu-item.style";
 import {withRouter} from "react-router-dom";
 
-export const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => (
-  <Wrapper imageUrl={imageUrl} className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
+export const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => {
+  return (<Wrapper imageUrl={imageUrl} className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <div className='background-image'/>
     <div className='content'>
       <h1 className='title'>{title.toUpperCase()}</h1>
@@ -11,5 +11,6 @@ export const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => (
     </div>
   </Wrapper>
 )
+}
 
 export default withRouter(MenuItem);
