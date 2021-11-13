@@ -1,12 +1,12 @@
 import React from 'react';
-import {Wrapper} from "./homepage.style";
+import {HomePageWrapper} from "./homepage.style";
 import Directory from "../../components/directory/directory.component";
 
-const HomePage = ({match}) => {
+const HomePage = () => {
   return (
-    <Wrapper>
+    <HomePageWrapper>
       <Directory/>
-    </Wrapper>
+    </HomePageWrapper>
   )
 }
 
