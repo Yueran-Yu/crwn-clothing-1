@@ -30,4 +30,17 @@ export const Wrapper = styled.div`
     margin-left: auto;
     font-size: 36px;
   }
+
+  button {
+    margin-left: auto;
+    margin-top: 50px;
+  }
+
+  .test-warning {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: red;
+  }
 `
