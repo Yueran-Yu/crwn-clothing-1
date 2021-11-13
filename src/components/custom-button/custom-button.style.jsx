@@ -10,7 +10,6 @@ const buttonStyles = css`
     color: black;
     border: 1px solid black;
   }
-
 `
 
 const invertedButtonStyles = css`
@@ -59,7 +58,6 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-
   ${getButtonStyles}
 `
 

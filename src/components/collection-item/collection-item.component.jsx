@@ -15,12 +15,13 @@ const CollectionItem = ({item, addItem}) => {
       <div className='image'/>
       <div className='collection-footer'>
         <span className='name'>{name}</span>
-        <span className='price'>{price}</span>
+        <span className='price'>${price}</span>
       </div>
-      <CustomButton onClick={AddItem} inverted>Add to cart</CustomButton>
+      <CustomButton className='custom-button' onClick={AddItem} inverted>Add to cart</CustomButton>
     </Wrapper>
   )
 }
+
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item))
 })
