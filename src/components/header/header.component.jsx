@@ -1,6 +1,6 @@
 import React from 'react';
 import {ReactComponent as Logo} from '../../assets/crown.svg';
-import {HeaderWrapper, LogoWrapper, OptionsWrapper, OptionDiv, OptionLink} from "./header.style";
+import {HeaderWrapper, LogoWrapper, OptionsWrapper, OptionLink} from "./header.style";
 import {auth} from '../../firebase/firebase.utils';
 import {connect} from 'react-redux';
 import CartIcon from "../cart-icon/cart-icon.component";
@@ -23,7 +23,7 @@ const Header = ({currentUser, hidden}) => (
       </OptionLink>
       {
         currentUser ?
-          <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv> :
+          <OptionLink as='div' onClick={() => auth.signOut()}>SIGN OUT</OptionLink> :
           <OptionLink to='/signin'>SIGN IN</OptionLink>
       }
       <CartIcon/>

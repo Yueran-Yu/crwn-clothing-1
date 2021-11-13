@@ -1,14 +1,10 @@
 import styled, {css} from 'styled-components';
 import {Link} from 'react-router-dom';
 
-const OptionWrapperStyles = css`
-  padding: 10px 15px;
-  cursor: pointer;
-`
 export const HeaderWrapper = styled.div`
   height: 70px;
   width: 100%;
-  display: flex;
+  display: flex; 
   justify-content: space-between;
   margin-bottom: 25px;
 `
@@ -28,9 +24,6 @@ export const OptionsWrapper = styled.div`
 `
 
 export const OptionLink = styled(Link)`
-  ${OptionWrapperStyles}
-`
-
-export const OptionDiv = styled.div`
-  ${OptionWrapperStyles}
+  padding: 10px 15px;
+  cursor: pointer;
 `
