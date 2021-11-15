@@ -1,11 +1,11 @@
 import React from 'react';
-import {Wrapper} from "./collection-preview.style";
+import {CollectionPreviewWrapper, PreviewWrapper, TitleWrapper} from "./collection-preview.style";
 import CollectionItem from "../collection-item/collection-item.component";
 
 const CollectionPreview = ({title, items}) => (
-  <Wrapper>
-    <h1>{title}</h1>
-    <div className='preview'>
+  <CollectionPreviewWrapper>
+    <TitleWrapper>{title}</TitleWrapper>
+    <PreviewWrapper>
       {
         items
           .filter((item, index) => index < 4)
@@ -13,8 +13,8 @@ const CollectionPreview = ({title, items}) => (
             <CollectionItem key={item.id} item={item}/>
           ))
       }
-    </div>
-  </Wrapper>
+    </PreviewWrapper>
+  </CollectionPreviewWrapper>
 )
 
 export default CollectionPreview;

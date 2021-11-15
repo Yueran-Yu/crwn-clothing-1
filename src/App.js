@@ -13,6 +13,7 @@ import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 // remember: in the previous video, we stored the user data in our database, but now we have to store that data in the 'state' of our application so we can use it in our app~
+import {selectCollectionsForPreview} from './redux/shop/shop.selectors';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -31,6 +32,9 @@ class App extends Component {
       } else {
         setCurrentUser(userAuth)
       }
+
+      // addCollectionAndDocuments('collections', collectionsArray.map(({title, items})=>({title, items})))
+
     })
   }
 
@@ -59,7 +63,8 @@ class App extends Component {
 // })
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionsForPreview
 })
 
 const mapDispatchToProps = dispatch => ({
