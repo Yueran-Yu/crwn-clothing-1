@@ -5,8 +5,6 @@ import {selectCollection} from "../../redux/shop/shop.selectors";
 import CollectionItem from "../../components/collection-item/collection-item.component";
 
 const CollectionPage = ({collection}) => {
-  console.log("**************")
-  console.log(collection)
   const {title, items} = collection;
   return (
     <Wrapper>
