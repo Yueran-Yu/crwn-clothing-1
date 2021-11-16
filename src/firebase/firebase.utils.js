@@ -16,7 +16,6 @@ const config = {
   measurementId: "G-VT84EGRRYF"
 }
 
-
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) {
     return
@@ -45,7 +44,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 firebase.initializeApp(config);
 
-//
 // export const addCollectionAndDocuments = async (collectionKey, objectsToAdd)=>{
 //   const collectionRef = firestore.collection(collectionKey)
 //   const batch = firestore.batch()
@@ -54,8 +52,22 @@ firebase.initializeApp(config);
 //     batch.set(newDocRef,obj)
 //   })
 //
-//   return await  batch.commit()
+//   return await batch.commit()
 // }
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformCollection = collections.docs.map(doc => {
+    const {title, items} = doc.data()
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    }
+  })
+  console.log("$$$$$$$$$$$$$")
+  console.log()
+}
 
 export const auth = firebase.auth()
 export const firestore = firebase.firestore()
