@@ -12,6 +12,7 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 import CheckoutPage from "./pages/checkout/checkout.component";
 // remember: in the previous video, we stored the user data in our database, but now we have to store that data in the 'state' of our application so we can use it in our app~
 import {selectCollectionsForPreview} from './redux/shop/shop.selectors';
+import {checkUserSession} from './redux/user/user.actions';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -29,8 +30,11 @@ class App extends Component {
     //     })
     //   }
     //   setCurrentUser(userAuth)
-      // addCollectionAndDocuments('collections', collectionsArray.map(({title, items})=>({title, items})))
+    // addCollectionAndDocuments('collections', collectionsArray.map(({title, items})=>({title, items})))
     // })
+
+    const {checkUserSession} = this.props
+    checkUserSession()
   }
 
   componentWillUnmount() {
@@ -62,11 +66,15 @@ const mapStateToProps = createStructuredSelector({
   collectionsArray: selectCollectionsForPreview
 })
 
+const mapDispatchToProps = dispatch => ({
+  checkUserSession: () => dispatch(checkUserSession())
+})
+
 // const mapDispatchToProps = dispatch => ({
-  // setCurrentUser is gonna be attached to the props, so we can use inside of our component
-  // dispatch will be called when we call setCurrentUser inside of our function
-  // dispatch(setCurrentUser(user)) here 'setCurrentUser(user)' is the action form redux
-  // setCurrentUser: user => dispatch(setCurrentUser(user))
+// setCurrentUser is gonna be attached to the props, so we can use inside of our component
+// dispatch will be called when we call setCurrentUser inside of our function
+// dispatch(setCurrentUser(user)) here 'setCurrentUser(user)' is the action form redux
+// setCurrentUser: user => dispatch(setCurrentUser(user))
 // })
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
