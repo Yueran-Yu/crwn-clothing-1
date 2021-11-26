@@ -66,16 +66,14 @@ export function* signOut() {
 export function* signUp({payload: {email, password, displayName}}) {
   try {
     const {user} = yield auth.createUserWithEmailAndPassword(email, password)
-    const userRef = yield call(createUserProfileDocument, user, {displayName})
-    const userSnapshot = yield userRef.get()
-    yield put(signUpSuccess({id:userSnapshot.id, ...userSnapshot.data()}))
+    yield put(signUpSuccess({user, additionalData: {displayName}}))
   } catch (error) {
     yield put(signUpFailure(error))
   }
 }
 
 export function* signInAfterSignUp({payload: {user, additionalData}}) {
-
+  yield getSnapshotFromUserAuth(user, additionalData)
 }
 
 export function* onGoogleSignInStart() {

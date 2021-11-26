@@ -9,28 +9,32 @@ import {selectCartHidden} from '../../redux/cart/cart.selectors'
 import {selectCurrentUser} from "../../redux/user/user.selectors";
 import {signOutStart} from "../../redux/user/user.actions";
 
-const Header = ({currentUser, hidden, signOutStart}) => (
-  <HeaderWrapper>
-    <LogoWrapper to='/'>
-      <Logo className='logo'/>
-    </LogoWrapper>
-    <OptionsWrapper>
-      <OptionLink to='/shop'>
-        SHOP
-      </OptionLink>
-      <OptionLink to='/shop'>
-        CONTACT
-      </OptionLink>
-      {
-        currentUser ?
-          <OptionLink as='div' onClick={signOutStart}>SIGN OUT</OptionLink> :
-          <OptionLink to='/signin'>SIGN IN</OptionLink>
-      }
-      <CartIcon/>
-    </OptionsWrapper>
-    {hidden ? null : <CartDropdown/>}
-  </HeaderWrapper>
-)
+const Header = ({currentUser, hidden, signOutStart}) => {
+  return (
+
+    <HeaderWrapper>
+      <LogoWrapper to='/'>
+        <Logo className='logo'/>
+      </LogoWrapper>
+      <OptionsWrapper>
+        <OptionLink to='/shop'>
+          SHOP
+        </OptionLink>
+        <OptionLink to='/shop'>
+          CONTACT
+        </OptionLink>
+        {
+          currentUser ?
+            <OptionLink as='div' onClick={signOutStart}>SIGN OUT</OptionLink> :
+            <OptionLink to='/signin'>SIGN IN</OptionLink>
+        }
+        <h4> Welcome, {currentUser ? currentUser.displayName : ''}</h4>
+        <CartIcon/>
+      </OptionsWrapper>
+      {hidden ? null : <CartDropdown/>}
+    </HeaderWrapper>
+  )
+}
 
 // state is root reducer
 // const mapStateToProps = (state) => ({
