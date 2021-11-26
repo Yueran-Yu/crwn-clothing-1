@@ -28,7 +28,7 @@ const Header = ({currentUser, hidden, signOutStart}) => {
             <OptionLink as='div' onClick={signOutStart}>SIGN OUT</OptionLink> :
             <OptionLink to='/signin'>SIGN IN</OptionLink>
         }
-        <h4> Welcome, {currentUser ? currentUser.displayName : ''}</h4>
+        <h4> {currentUser ? (`Welcome,   ${currentUser.displayName.split(' ')[0]}`) : ''}</h4>
         <CartIcon/>
       </OptionsWrapper>
       {hidden ? null : <CartDropdown/>}
