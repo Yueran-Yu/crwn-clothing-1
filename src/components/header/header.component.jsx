@@ -17,6 +17,7 @@ const Header = ({currentUser, hidden, signOutStart}) => {
         <Logo className='logo'/>
       </LogoWrapper>
       <OptionsWrapper>
+        <p> {currentUser ? (`Welcome,   ${currentUser.displayName.split(' ')[0]}`) : ''}</p>
         <OptionLink to='/shop'>
           SHOP
         </OptionLink>
@@ -28,7 +29,6 @@ const Header = ({currentUser, hidden, signOutStart}) => {
             <OptionLink as='div' onClick={signOutStart}>SIGN OUT</OptionLink> :
             <OptionLink to='/signin'>SIGN IN</OptionLink>
         }
-        <h4> {currentUser ? (`Welcome,   ${currentUser.displayName.split(' ')[0]}`) : ''}</h4>
         <CartIcon/>
       </OptionsWrapper>
       {hidden ? null : <CartDropdown/>}

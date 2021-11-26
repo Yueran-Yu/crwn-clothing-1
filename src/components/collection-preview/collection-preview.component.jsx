@@ -1,10 +1,11 @@
 import React from 'react';
 import {CollectionPreviewWrapper, PreviewWrapper, TitleWrapper} from "./collection-preview.style";
 import CollectionItem from "../collection-item/collection-item.component";
+import {withRouter} from "react-router";
 
-const CollectionPreview = ({title, items}) => (
+const CollectionPreview = ({title, items, history, match, routeName}) => (
   <CollectionPreviewWrapper>
-    <TitleWrapper>{title}</TitleWrapper>
+    <TitleWrapper onClick={()=> history.push(`${match.path}/${routeName}`)}>{title.toUpperCase()}</TitleWrapper>
     <PreviewWrapper>
       {
         items
@@ -17,4 +18,4 @@ const CollectionPreview = ({title, items}) => (
   </CollectionPreviewWrapper>
 )
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);
