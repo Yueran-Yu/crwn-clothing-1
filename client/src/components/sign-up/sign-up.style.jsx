@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const SignUpWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 380px;
+  
+`
 
-  .title {
-    margin: 10px 0;
-  }
+export const SignUpTitle = styled.h2`
+  margin: 10px 0;
 `

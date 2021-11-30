@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const SignInWrapper = styled.div`
   width: 380px;
   flex-direction: column;
-
-  .title {
-    margin: 10px 0;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
 `
+
+export const SignInTitle = styled.h2`
+  margin: 10px 0;
+`
+
+export const ButtonBarWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
