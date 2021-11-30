@@ -1,6 +1,12 @@
 import React from 'react';
-import {Wrapper} from './collection-item.style';
-import CustomButton from "../custom-button/custom-button.compnent";
+import {
+  CollectionItemWrapper,
+  CollectionFooterContainer,
+  AddButton,
+  BackgroundImage,
+  NameContainer,
+  PriceContainer
+} from './collection-item.style';
 import {connect} from 'react-redux';
 import {addItem} from "../../redux/cart/cart.actions";
 
@@ -11,14 +17,14 @@ const CollectionItem = ({item, addItem}) => {
   }
 
   return (
-    <Wrapper imageUrl={imageUrl}>
-      <div className='image'/>
-      <div className='collection-footer'>
-        <span className='name'>{name}</span>
-        <span className='price'>${price}</span>
-      </div>
-      <CustomButton className='custom-button' onClick={AddItem} inverted>Add to cart</CustomButton>
-    </Wrapper>
+    <CollectionItemWrapper>
+      <BackgroundImage className='image' imageUrl={imageUrl}/>
+      <CollectionFooterContainer>
+        <NameContainer>{name}</NameContainer>
+        <PriceContainer>${price}</PriceContainer>
+      </CollectionFooterContainer>
+      <AddButton className='custom-button' onClick={AddItem} inverted>Add to cart</AddButton>
+    </CollectionItemWrapper>
   )
 }
 

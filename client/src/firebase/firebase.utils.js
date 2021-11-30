@@ -1,7 +1,6 @@
 /**
  * if you have using a version of firebase that's greater than v8, you will encounter the import error
  **/
-
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';

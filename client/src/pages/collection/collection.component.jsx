@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper} from "./collection.styles";
+import {CollectionPageWrapper, CollectionItemsWrapper, CollectionTitle} from "./collection.styles";
 import {selectCollection} from "../../redux/shop/shop.selectors";
 import CollectionItem from "../../components/collection-item/collection-item.component";
 import {useParams} from "react-router";
@@ -11,10 +11,10 @@ const CollectionPage = () => {
   const {title, items} = collection;
 
   return (
-    <Wrapper>
-      <h2 className='title'>{title}</h2>
-      <div className="items">{items.map(i => <CollectionItem key={i.id} item={i}/>)}</div>
-    </Wrapper>
+    <CollectionPageWrapper>
+      <CollectionTitle>{title}</CollectionTitle>
+      <CollectionItemsWrapper>{items.map(i => <CollectionItem key={i.id} item={i}/>)}</CollectionItemsWrapper>
+    </CollectionPageWrapper>
   )
 }
 

@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import './App.css';
 import {Route, Switch, Redirect} from "react-router";
 import {useSelector, useDispatch} from 'react-redux';
 import {selectCurrentUser} from "./redux/user/user.selectors";
@@ -10,6 +9,7 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 import CheckoutPage from "./pages/checkout/checkout.component";
 // remember: in the previous video, we stored the user data in our database, but now we have to store that data in the 'state' of our application so we can use it in our app~
 import {checkUserSession} from './redux/user/user.actions';
+import {GlobalStyle} from "./global.styles";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser)
@@ -21,6 +21,7 @@ const App = () => {
 
   return (
     <div>
+      <GlobalStyle/>
       <Header/>
       <Switch>
         <Route exact path='/' component={HomePage}/>
