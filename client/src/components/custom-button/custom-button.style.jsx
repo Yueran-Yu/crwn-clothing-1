@@ -47,7 +47,7 @@ export const CustomButtonContainer = styled.button`
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
+  padding: 0 25px 0 25px;
   font-size: 15px;
   background-color: black;
   color: white;
@@ -58,7 +58,16 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  ${getButtonStyles}
+  ${getButtonStyles};
+
+  @media screen and (max-width: 800px) {
+    min-width: 140px;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px 0 20px;
+    font-size: 13px;
+  }
 `
 
 

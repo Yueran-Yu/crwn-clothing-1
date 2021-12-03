@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {SignInWrapper, ButtonBarWrapper, SignInTitle, SignP} from './sign-in.style';
+import {SignInWrapper, ButtonBarWrapper, SignInTitle, PTag, OptionLink, SignUpWrapper} from './sign-in.style';
 import {connect} from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.compnent";
 import {emailSignInStart, googleSignInStart} from "../../redux/user/user.actions";
+
 
 const SignIn = ({googleSignInStart, emailSignInStart}) => {
   const [userCredentials, setCredentials] = useState({email: '', password: ''})
@@ -22,7 +23,7 @@ const SignIn = ({googleSignInStart, emailSignInStart}) => {
   return (
     <SignInWrapper>
       <SignInTitle>I already have an account.</SignInTitle>
-      <SignP>Sign in with your email and password</SignP>
+      <PTag>Sign in with your email and password</PTag>
       <form onSubmit={handleSubmit}>
         <FormInput name='email' type='email' label='email' handleChange={handleChange} value={email} required/>
         <FormInput name='password' type='password' label='password' handleChange={handleChange} value={password}
@@ -32,9 +33,9 @@ const SignIn = ({googleSignInStart, emailSignInStart}) => {
           <CustomButton type='button' onClick={googleSignInStart} isGoogleSignIn>{''}Sign In With
             GOOGLE{''}</CustomButton>
         </ButtonBarWrapper>
-        <div>Don't have an account?
-          <a href="">Sign Up</a>
-        </div>
+        <SignUpWrapper>Don't have an account?
+          <OptionLink to='/signup'>{''}Sign Up</OptionLink>
+        </SignUpWrapper>
       </form>
     </SignInWrapper>
   )

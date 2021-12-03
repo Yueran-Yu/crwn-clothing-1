@@ -4,6 +4,7 @@ import CustomButton from "../custom-button/custom-button.compnent";
 import {signUpStart} from "../../redux/user/user.actions";
 import {connect} from "react-redux";
 import {SignUpWrapper, SignUpTitle} from "./sign-up.style";
+import {PTag} from "../sign-in/sign-in.style";
 
 class SignUp extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ class SignUp extends Component {
       alert("password don't match")
       return
     }
-
     signUpStart({displayName, email, password})
   }
 
@@ -39,7 +39,7 @@ class SignUp extends Component {
     return (
       <SignUpWrapper>
         <SignUpTitle className='title'> I do not have a account</SignUpTitle>
-        <span>Sign Up with your email and password.</span>
+        <PTag>Sign Up with your email and password.</PTag>
         <form className='sign-up-form' onSubmit={this.handleSubmit}>
           <FormInput type='text'
                      name='displayName'

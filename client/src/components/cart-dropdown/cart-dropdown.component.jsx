@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomButton from "../custom-button/custom-button.compnent";
 import './cart-dropdown.styles'
-import {Wrapper} from "./cart-dropdown.styles";
+import {CartItems, EmptyMessage, Wrapper} from "./cart-dropdown.styles";
 import CartItem from "../cart-item/cart-item.component";
 import {useDispatch, useSelector} from 'react-redux';
 import {selectCartItems} from '../../redux/cart/cart.selectors';
@@ -14,19 +14,18 @@ const CartDropdown = () => {
   const dispatch = useDispatch()
   return (
     <Wrapper>
-      <div className='cart-items'>
+      <CartItems>
         {
           cartItems.length ?
             cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem}/>) :
-            <span className='empty-message'>Your Cart is empty</span>
+            <EmptyMessage>Your Cart is empty</EmptyMessage>
         }
-      </div>
+      </CartItems>
       <CustomButton inverted onClick={
         () => {
           history.push(`/checkout`)
           dispatch(toggleCart())
         }
-
       }>GO TO CHECKOUT</CustomButton>
     </Wrapper>
   )

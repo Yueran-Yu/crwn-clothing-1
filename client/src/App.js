@@ -10,6 +10,7 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 import {checkUserSession} from './redux/user/user.actions';
 import {GlobalStyle} from "./global.styles";
 import SignIn from "./components/sign-in/sign-in.component";
+import SignUp from "./components/sign-up/sign-up.component";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser)
@@ -26,9 +27,10 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={HomePage}/>
         <Route path='/shop' component={ShopPage}/>
-        <Route exxact path='/checkout' component={CheckoutPage}/>
+        <Route exact path='/checkout' component={CheckoutPage}/>
         <Route exact path='/signin'
                render={() => currentUser ? (<Redirect to='/'/>) : (<SignIn/>)}/>
+        <Route eaxct path='/signup' component={SignUp}/>
       </Switch>
     </div>
   )
