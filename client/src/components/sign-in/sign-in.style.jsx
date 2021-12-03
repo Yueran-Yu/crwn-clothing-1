@@ -2,11 +2,16 @@ import styled from 'styled-components';
 
 export const SignInWrapper = styled.div`
   width: 380px;
-  flex-direction: column;
+  margin: 30px auto;
 `
 
 export const SignInTitle = styled.h2`
   margin: 10px 0;
+  text-align: center;
+`
+
+export const SignP = styled.p`
+  text-align: center;
 `
 
 export const ButtonBarWrapper = styled.div`
