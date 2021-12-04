@@ -15,10 +15,8 @@ const ShopPage =({fetchCollectionsStart, match})=>{
         <Route exact
                path={`${match.path}`}
                component={CollectionsOverviewContainer}/>
-
         <Route path={`${match.path}/:collectionId`}
                component={CollectionPageContainer}/>
-
         {/*       */}
         {/*<Route path={`${match.path}/:collectionId`}*/}
         {/*       render={(props) => <CollectionPageWithSpinner isLoading={!isCollectionsLoaded} {...props}/>}/>*/}

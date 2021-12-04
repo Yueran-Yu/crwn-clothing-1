@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+  @media screen and (max-width: 800px) {
+    font-size: 15px;
+  }
 
   .image-container {
     width: 23%;
@@ -16,6 +19,10 @@ export const Wrapper = styled.div`
     img {
       width: 100%;
       height: 100%;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 20%;
     }
   }
 

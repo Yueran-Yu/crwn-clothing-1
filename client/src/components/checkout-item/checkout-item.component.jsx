@@ -7,7 +7,8 @@ import {clearItemFormCart, addItem, removeItem} from "../../redux/cart/cart.acti
 const CheckoutItem = ({cartItem, clearItem, addItem, removeItem}) => {
 
   const {name, imageUrl, price, quantity} = cartItem
-  return (<Wrapper>
+  return (
+    <Wrapper>
       <div className='image-container'>
         <img src={imageUrl} alt="item"/>
       </div>

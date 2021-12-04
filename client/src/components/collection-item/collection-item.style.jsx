@@ -23,6 +23,8 @@ export const CollectionItemWrapper = styled.div`
 
   @media screen and (max-width: 800px) {
     width: 40vw;
+    height: 250px;
+    margin-bottom: 15px;
     &:hover {
       .image {
         opacity: unset;
@@ -47,8 +49,10 @@ export const AddButton = styled(CustomButton)`
     opacity: 0.9;
     min-width: unset;
     padding: 0 10px;
+    top: 185px;
   }
 `
+
 export const BackgroundImage = styled.div`
   width: 100%;
   height: 95%;
@@ -64,14 +68,21 @@ export const CollectionFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+ 
 `
 
 export const NameContainer = styled.span`
   width: 90%;
   margin-bottom: 15px;
+  @media screen and (max-width: 800px) {
+    font-size: 13px;
+  }
 `
 
 export const PriceContainer = styled.span`
   width: 10%;
   text-align: right;
+  @media screen and (max-width: 800px) {
+    font-size: 13px;
+  }
 `
