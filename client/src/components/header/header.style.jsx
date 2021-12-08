@@ -3,15 +3,17 @@ import {Link} from 'react-router-dom';
 
 export const HeaderWrapper = styled.div`
   height: 70px;
-  width: 100%;
+  width: 75%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin: 30px auto 30px;
 
   @media screen and (max-width: 800px) {
     height: 60px;
     padding: 10px;
+    margin-top: 30px;
     margin-bottom: 20px;
+    width: 90%;
   }
 `
 
@@ -19,6 +21,13 @@ export const LogoWrapper = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
+
+  .logo {
+    fill: #a4a4a4;
+    stroke: #072483;
+    height: 40px;
+    width: 40px;
+  }
 
   @media screen and (max-width: 800px) {
     width: 50px;

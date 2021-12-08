@@ -6,11 +6,12 @@ import HomePage from './pages/homepages/homepage.component'
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
-// remember: in the previous video, we stored the user data in our database, but now we have to store that data in the 'state' of our application so we can use it in our app~
+//remember: in the previous video, we stored the user data in our database, but now we have to store that data in the 'state' of our application so we can use it in our app~
 import {checkUserSession} from './redux/user/user.actions';
 import {GlobalStyle} from "./global.styles";
 import SignIn from "./components/sign-in/sign-in.component";
 import SignUp from "./components/sign-up/sign-up.component";
+import Footer from "./components/footer/footer.component";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser)
@@ -32,6 +33,7 @@ const App = () => {
                render={() => currentUser ? (<Redirect to='/'/>) : (<SignIn/>)}/>
         <Route eaxct path='/signup' component={SignUp}/>
       </Switch>
+      <Footer className='footer'/>
     </div>
   )
 }
@@ -42,7 +44,6 @@ const App = () => {
 
 // const mapStateToProps = createStructuredSelector({
 //   currentUser: selectCurrentUser,
-//   collectionsArray: selectCollectionsForPreview
 // })
 //
 // const mapDispatchToProps = dispatch => ({
@@ -50,9 +51,9 @@ const App = () => {
 // })
 
 // const mapDispatchToProps = dispatch => ({
-// setCurrentUser is gonna be attached to the props, so we can use inside of our component
-// dispatch will be called when we call setCurrentUser inside of our function
-// dispatch(setCurrentUser(user)) here 'setCurrentUser(user)' is the action form redux
+// // setCurrentUser is gonna be attached to the props, so we can use inside of our component
+// // dispatch will be called when we call setCurrentUser inside of our function
+// // dispatch(setCurrentUser(user)) here 'setCurrentUser(user)' is the action form redux
 // setCurrentUser: user => dispatch(setCurrentUser(user))
 // })
 

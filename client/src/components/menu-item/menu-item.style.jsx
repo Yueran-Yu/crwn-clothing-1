@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const MenuItemWrapper = styled.div`
-  height: ${({size}) => (size ? '380px' : '240px')};
+  height: ${({size}) => (size ? '560px' : '420px')};
   min-width: 30%;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  margin: 0 7.5px 15px;
+  margin: 0 20px 25px;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;  
 
   &:hover {
     cursor: pointer;
@@ -33,7 +33,7 @@ export const MenuItemWrapper = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    height: 200px; 
+    height: 200px;
   }
 `
 
@@ -52,10 +52,14 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px dashed black;
   background-color: white;
   opacity: 0.7;
   position: absolute;
+
+  @media screen and (max-width: 800px) {
+    
+  }
 `;
 
 export const ContentTitle = styled.span`

@@ -12,7 +12,7 @@ export const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => {
   return (
     <MenuItemWrapper size={size} onClick={() => history.push(`${match.url}${linkUrl}`)}>
       <BackgroundImageWrapper className='background-image' imageUrl={imageUrl}/>
-      <ContentWrapper className='content'>
+      <ContentWrapper>
         <ContentTitle>{title.toUpperCase()}</ContentTitle>
         <ContentSubtitle>SHOP NOW</ContentSubtitle>
       </ContentWrapper>

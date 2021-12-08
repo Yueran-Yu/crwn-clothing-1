@@ -10,14 +10,20 @@ export const Wrapper = styled.div`
   cursor: pointer;
 
   .shopping-icon {
-    width: 24px;
-    height: 24px;
+    width: 34px;
+    height: 34px;
+    position: relative;
   }
 
   .item-count {
-    position: absolute;
     font-size: 10px;
     font-weight: bold;
-    bottom: 12px;
+    bottom: 16px;
+    right: 18px;
+    position: absolute;
+    
+    @media screen and (max-width: 800px) {
+      right: 18px;
+    }
   }
 `
