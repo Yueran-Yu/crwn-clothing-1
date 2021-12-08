@@ -37,7 +37,7 @@ export const Row = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 5px;
   }
 `
 export const FooterLink = styled.a`
@@ -62,8 +62,9 @@ export const Heading = styled.p`
   color: #666666;
   margin-bottom: 40px;
   font-weight: bold;
-  
+
   @media (max-width: 1000px) {
     font-size: 20px;
+    margin-bottom: 10px;
   }
 `

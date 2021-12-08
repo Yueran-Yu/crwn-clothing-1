@@ -18,12 +18,8 @@ export const Wrapper = styled.div`
   .item-count {
     font-size: 10px;
     font-weight: bold;
-    bottom: 16px;
+    bottom: 17px;
     right: 18px;
     position: absolute;
-    
-    @media screen and (max-width: 800px) {
-      right: 18px;
-    }
   }
 `

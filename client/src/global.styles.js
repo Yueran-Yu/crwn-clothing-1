@@ -2,7 +2,7 @@ import {createGlobalStyle} from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Open Sans Condensed';
+    font-family: 'Barlow Condensed', sans-serif;
     position: relative;
     @media screen and (max-width:800px){
       width: 100%;
