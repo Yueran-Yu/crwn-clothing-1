@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   }
 
   .paginationActive a {
-    color: white;
+    color: black;
     background-color: #ececec;
   }
 

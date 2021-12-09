@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
       width: 100%;
     }
     
+    
     .footer{
       position: fixed;
     }

@@ -15,7 +15,6 @@ const CollectionPage = () => {
   const pageVisited = pageNumber * itemsPerPage
   const currentDisplayItems = items.slice(pageVisited, pageVisited + itemsPerPage)
   const pageCount = Math.ceil(items.length / itemsPerPage)
-
   const changePage = ({selected}) => {
     setPageNumber(selected)
   }
@@ -28,7 +27,6 @@ const CollectionPage = () => {
         {currentDisplayItems.map(i => <CollectionItem key={i.id} item={i}/>)}
       </CollectionItemsWrapper>
       <Pagination pageCount={pageCount} changePage={changePage}/>
-
     </CollectionPageWrapper>
   )
 }
