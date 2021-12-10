@@ -1,5 +1,5 @@
 import React from "react";
-import {MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput} from "mdbreact";
+import {MDBRow, MDBCol,MDBIcon, MDBBtn} from "mdbreact";
 import Wrapper, {ContactForm} from "./contact.styles";
 
 const ContactPage = () => {

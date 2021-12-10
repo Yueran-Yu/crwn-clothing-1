@@ -21,5 +21,9 @@ export const Wrapper = styled.div`
     bottom: 17px;
     right: 18px;
     position: absolute;
+    @media screen and (max-width: 800px) {
+      right: 14px;
+
+    }
   }
 `

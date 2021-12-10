@@ -5,6 +5,7 @@ export const SignInWrapper = styled.div`
   width: 380px;
   margin: 30px auto;
   padding:0 14px;
+
 `
 
 export const SignInTitle = styled.h2`
