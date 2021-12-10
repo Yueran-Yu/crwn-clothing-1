@@ -13,6 +13,7 @@ import SignIn from "./components/sign-in/sign-in.component";
 import SignUp from "./components/sign-up/sign-up.component";
 import Footer from "./components/footer/footer.component";
 import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
+import ContactPage from "./components/contact/contact.component";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser)
@@ -26,10 +27,10 @@ const App = () => {
     <div>
       <GlobalStyle/>
       <Header/>
-
       <Switch>
         <Route exact path='/' component={HomePage}/>
         <Route path='/shop' component={ShopPage}/>
+        <Route exact path='/contactUs' component={ContactPage}/>
         <Route exact path='/checkout' component={CheckoutPage}/>
         <Route exact path='/signin'
                render={() => currentUser ? (<Redirect to='/'/>) : (<SignIn/>)}/>
