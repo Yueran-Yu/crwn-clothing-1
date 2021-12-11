@@ -26,7 +26,3 @@ export const fetchCollectionsStartAsync = () => {
     }).catch(error => dispatch(fetchCollectionsFailure(error.message)))
   }
 }
-
-/*
-* If redux-thunk middleware is enabled, any time you attempt to dispatch a function instead of an object, the middleware will call that function with dispatch method itself as the first argument.
-*/

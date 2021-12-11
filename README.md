@@ -1,6 +1,6 @@
 ### Deploy Project to Heroku
 
-- ```heroku create Hawaii-clothing --buildpack mars/create-react-app ```
+- ```heroku create hawaii-clothing --buildpack mars/create-react-app ```
 - ```heroku create $APP_NAME --buildpack mars/create-react-app```
   #### Link: [Heroku Buildpack for create-react-app](https://github.com/mars/create-react-app-buildpack)
 - ***Buildpack***
@@ -9,8 +9,9 @@
     
 
 - ```$ git add . ```
-- ```$ git commit -am "make it better"```
 - ```$ heroku git:remote -a hawaii-clothing```
+- ```set git remote heroku to https://git.heroku.com/hawaii-clothing.git```
+- ```$ git commit -am "make it better"```
 - ```$ git push heroku master```
     
     

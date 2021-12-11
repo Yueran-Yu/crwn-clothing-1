@@ -7,7 +7,6 @@ export const selectCollections = createSelector([selectShop],
   shop => shop.collections
 )
 
-// before convert an object into an array
 export const selectCollectionsForPreview = createSelector([selectCollections],
   collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 )

@@ -42,23 +42,4 @@ const App = () => {
   )
 }
 
-// const mapStateToProps = (state) => ({
-//   currentUser: selectCurrentUser(state)
-// })
-
-// const mapStateToProps = createStructuredSelector({
-//   currentUser: selectCurrentUser,
-// })
-//
-// const mapDispatchToProps = dispatch => ({
-//   checkUserSession: () => dispatch(checkUserSession())
-// })
-
-// const mapDispatchToProps = dispatch => ({
-// // setCurrentUser is gonna be attached to the props, so we can use inside of our component
-// // dispatch will be called when we call setCurrentUser inside of our function
-// // dispatch(setCurrentUser(user)) here 'setCurrentUser(user)' is the action form redux
-// setCurrentUser: user => dispatch(setCurrentUser(user))
-// })
-
 export default App;
