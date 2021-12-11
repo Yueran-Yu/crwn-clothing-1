@@ -26,7 +26,7 @@ export const ContactForm = styled.div`
       border: solid 1px grey;
     }
 
-    textarea{
+    textarea {
       margin: 10px 0;
       border-radius: 5px;
       border: solid 1px grey;
@@ -45,6 +45,10 @@ export const ContactForm = styled.div`
     color: white;
     border-radius: 5px;
   }
+`
+
+export const Frame = styled.div`
+  height: 400px;
 `
 
 export default Wrapper;
