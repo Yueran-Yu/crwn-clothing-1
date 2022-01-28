@@ -11,7 +11,6 @@ import {signOutStart} from "../../redux/user/user.actions";
 
 const Header = ({currentUser, hidden, signOutStart}) => {
   return (
-
     <HeaderWrapper>
       <LogoWrapper to='/'>
         <Logo className='logo'/>

@@ -53,8 +53,7 @@ export const CustomButtonContainer = styled.button`
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 25px 0 25px;
-  font-size: 15px;
+  padding: 0 5px 0 5px;
   background-color: black;
   color: white;
   text-transform: uppercase;
@@ -71,8 +70,8 @@ export const CustomButtonContainer = styled.button`
     width: auto;
     height: 40px;
     line-height: 40px;
-    padding: 0 20px 0 20px;
-    font-size: 13px;
+    padding: 0 5px 0 5px;
+    font-size: 8px;
   }
 `
 

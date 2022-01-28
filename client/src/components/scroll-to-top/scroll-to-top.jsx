@@ -3,6 +3,7 @@ import Wrapper from "./scroll.styles";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
+
   const toggleVisibility = () => {
     if (window.pageYOffset > 250) {
       setIsVisible(true)

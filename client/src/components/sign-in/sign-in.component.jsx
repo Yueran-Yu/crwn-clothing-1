@@ -5,7 +5,6 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.compnent";
 import {emailSignInStart, googleSignInStart} from "../../redux/user/user.actions";
 
-
 const SignIn = ({googleSignInStart, emailSignInStart}) => {
   const [userCredentials, setCredentials] = useState({email: '', password: ''})
   const {email, password} = userCredentials
@@ -24,13 +23,13 @@ const SignIn = ({googleSignInStart, emailSignInStart}) => {
     <SignInWrapper>
       <SignInTitle>I already have an account.</SignInTitle>
       <PTag>Sign in with your email and password</PTag>
-      <form onSubmit={handleSubmit}>
+      <form>
         <FormInput name='email' type='email' label='email' handleChange={handleChange} value={email} required/>
         <FormInput name='password' type='password' label='password' handleChange={handleChange} value={password}
                    required/>
         <ButtonBarWrapper>
-          <CustomButton type='submit'>Sign In</CustomButton>
-          <CustomButton type='button' onClick={googleSignInStart} isGoogleSignIn>{''}Sign In With
+          <CustomButton type='submit' onSubmit={handleSubmit}>Sign In</CustomButton>
+          <CustomButton type='button' isGoogleSignIn onClick={googleSignInStart}>{''}Sign In With
             GOOGLE{''}</CustomButton>
         </ButtonBarWrapper>
         <SignUpWrapper>Don't have an account?

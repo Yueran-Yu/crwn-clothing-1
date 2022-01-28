@@ -3,11 +3,15 @@ import styled from 'styled-components';
 export const SignUpWrapper = styled.div`
   width: 380px;
   margin: 30px auto;
-  padding:0 30px;
+  padding: 0 30px;
   position: relative;
-  
-  
-  button{
+
+  button {
+    font-size: 14px;
+  }
+
+
+  button {
     position: absolute;
     left: 27.5%;
     margin: 0;
